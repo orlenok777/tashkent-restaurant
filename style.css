@@ -890,6 +890,160 @@ html[lang="he"] .catering-card h3 {
 }
 
 /* ============================================
+   BLOGGER SECTION
+   ============================================ */
+.blogger {
+  background: var(--color-surface);
+}
+
+.blogger-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .blogger-grid { grid-template-columns: 1fr; }
+}
+
+.blogger-main {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.blogger-main img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.blogger-quote {
+  position: relative;
+  padding: var(--space-4) 0;
+}
+.blogger-quote svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.15;
+}
+.blogger-quote p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  font-style: italic;
+  padding-left: var(--space-2);
+}
+
+html[lang="he"] .blogger-quote p {
+  padding-left: 0;
+  padding-right: var(--space-2);
+}
+
+.blogger-author {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 2px solid var(--color-gold);
+}
+.blogger-author strong {
+  display: block;
+  font-size: var(--text-lg);
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  margin-bottom: var(--space-1);
+}
+html[lang="he"] .blogger-author strong {
+  font-family: var(--font-he);
+}
+.blogger-author span {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.blogger-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+.blogger-photos img {
+  border-radius: var(--radius-lg);
+  aspect-ratio: 1;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.blogger-photos img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .blogger-photos { grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
+}
+
+/* ============================================
+   REAL PHOTO GALLERY
+   ============================================ */
+.gallery {
+  background: var(--color-bg);
+}
+
+.real-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 280px;
+  gap: var(--space-4);
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.gallery-item.wide {
+  grid-column: span 2;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-4) var(--space-5);
+  background: linear-gradient(transparent, rgba(20,16,10,0.8));
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .real-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+  .gallery-item.large {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .gallery-item.wide {
+    grid-column: span 2;
+  }
+}
+
+/* ============================================
    ANIMATIONS (scroll reveals)
    ============================================ */
 .section-header,
