@@ -1060,3 +1060,70 @@ html[lang="he"] .blogger-author strong {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================================
+   LIVE KITCHEN GALLERY (fresh WhatsApp photos)
+   ============================================ */
+.live-gallery {
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  position: relative;
+}
+.live-gallery::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  opacity: 0.35;
+}
+.live-gallery .real-gallery {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 180px;
+}
+.live-gallery .gallery-item {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border: 1px solid rgba(200,148,62,0.1);
+}
+.live-gallery .gallery-item.large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.live-gallery .gallery-item.wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.live-gallery-cta {
+  margin-top: var(--space-12);
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  border: 1px solid rgba(200,148,62,0.2);
+}
+.live-gallery-cta p {
+  margin: 0 0 var(--space-5);
+  font-size: 1.1rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .live-gallery .real-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+  }
+  .live-gallery .gallery-item.large,
+  .live-gallery .gallery-item.wide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+@media (max-width: 520px) {
+  .live-gallery .real-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 240px;
+  }
+  .live-gallery .gallery-item.large,
+  .live-gallery .gallery-item.wide {
+    grid-column: span 1;
+  }
+}
